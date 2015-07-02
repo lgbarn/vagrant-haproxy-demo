@@ -4,8 +4,7 @@
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.box = "precise32"
-  config.vm.box_url = "http://files.vagrantup.com/precise32.box"
+  config.vm.box = "puppetlabs/centos-6.6-64-nocm"
   config.vm.provider "virtualbox" do |v|
     v.customize ["modifyvm", :id, "--memory", 256]
   end
@@ -33,6 +32,22 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     web2_config.vm.hostname = 'web2'
     web2_config.vm.network :private_network, ip: "172.28.33.12"
     web2_config.vm.provision :shell, :path => "web-setup.sh"
+
+  end
+  config.vm.define :web3 do |web3_config|
+
+    web3_config.vm.hostname = 'web3'
+    web3_config.vm.network :private_network, ip: "172.28.33.13"
+    web3_config.vm.provision :shell, :path => "web-setup.sh"
+
+
+  end
+  config.vm.define :web4 do |web4_config|
+
+    web4_config.vm.hostname = 'web4'
+    web4_config.vm.network :private_network, ip: "172.28.33.14"
+    web4_config.vm.provision :shell, :path => "web-setup.sh"
+
 
   end
 end

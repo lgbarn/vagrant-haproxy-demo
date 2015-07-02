@@ -3,7 +3,8 @@
 if [ ! -f /etc/haproxy/haproxy.cfg ]; then
 
   # Install haproxy
-  /usr/bin/apt-get -y install haproxy
+  yum -y install haproxy
+  iptables -F
 
   # Configure haproxy
   cat > /etc/default/haproxy <<EOD
@@ -38,6 +39,8 @@ backend webservers
     option http-server-close
     server web1 172.28.33.11:80 maxconn 32 check
     server web2 172.28.33.12:80 maxconn 32 check
+    server web3 172.28.33.13:80 maxconn 32 check
+    server web4 172.28.33.14:80 maxconn 32 check
 
 listen admin
     bind *:8080
@@ -45,5 +48,5 @@ listen admin
 EOD
 
   cp /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg.orig
-  /usr/sbin/service haproxy restart
+  /sbin/service haproxy restart
 fi
