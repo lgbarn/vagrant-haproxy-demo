@@ -3,7 +3,9 @@
 
   # Install apache
   yum -y install httpd
-  iptables -F
+  service iptables save
+  service iptables stop
+  chkconfig iptables off
   cat > /var/www/index.html <<EOD
 <html><head><title>${HOSTNAME}</title></head><body><h1>${HOSTNAME}</h1>
 <p>This is the default web page for ${HOSTNAME}.</p>

@@ -4,7 +4,10 @@ if [ ! -f /etc/haproxy/haproxy.cfg ]; then
 
   # Install haproxy
   yum -y install haproxy
-  iptables -F
+  yum -y install keepalived
+  service iptables save
+  service iptables stop
+  chkconfig iptables off
 
   # Configure haproxy
   cat > /etc/default/haproxy <<EOD
