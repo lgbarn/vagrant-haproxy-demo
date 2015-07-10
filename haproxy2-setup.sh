@@ -60,12 +60,12 @@ EOD
 ! Configuration File for keepalived
 
 global_defs {
-   #notification_email {
-   #  luther.barnum@gmail.com
-   #}
-   #notification_email_from Luther.Barnum@gmail.com
-   #smtp_server 192.168.200.1
-   #smtp_connect_timeout 30
+#   notification_email {
+#     luther.barnum@gmail.com
+#   }
+#   notification_email_from Luther.Barnum@gmail.com
+#   smtp_server 192.168.200.1
+#   smtp_connect_timeout 30
    router_id LVS_DEVEL
 }
 
@@ -75,10 +75,6 @@ vrrp_instance VI_1 {
     virtual_router_id 51
     priority 100
     advert_int 1
-    authentication {
-        auth_type PASS
-        auth_pass 1111
-    }
     virtual_ipaddress {
         172.28.33.10
     }
@@ -87,7 +83,7 @@ vrrp_instance VI_1 {
 virtual_server 172.28.33.10 80 {
     delay_loop 6
     lb_algo rr
-    lb_kind NAT
+    #lb_kind NAT
     persistence_timeout 50
     protocol TCP
    # sorry_server 192.168.200.200 1358
@@ -97,11 +93,9 @@ virtual_server 172.28.33.10 80 {
         HTTP_GET {
             url {
               path /hello.php
+              connect_timeout 3
             #  digest 640205b7b0fc66c1ea91c463fac6334d
             }
-            connect_timeout 3
-            nb_get_retry 3
-            delay_before_retry 3
         }
     }
 
@@ -110,11 +104,9 @@ virtual_server 172.28.33.10 80 {
         HTTP_GET {
             url {
               path /hello.php
+              connect_timeout 3
             #  digest 640205b7b0fc66c1ea91c463fac6334c
             }
-            connect_timeout 3
-            nb_get_retry 3
-            delay_before_retry 3
         }
     }
 }
