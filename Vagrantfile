@@ -12,11 +12,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define :haproxy1, primary: true do |haproxy1_config|
 
     haproxy1_config.vm.hostname = 'haproxy1'
-    #haproxy1_config.vm.network :forwarded_port, guest: 8080, host: 8080
-    #haproxy1_config.vm.network :forwarded_port, guest: 80, host: 8081
+    haproxy1_config.vm.network :forwarded_port, guest: 8080, host: 8080
+    haproxy1_config.vm.network :forwarded_port, guest: 80, host: 8081
 
     haproxy1_config.vm.network :private_network, ip: "172.28.33.11"
-    haproxy1_config.vm.provision :shell, :path => "haproxy-setup.sh"
+    haproxy1_config.vm.provision :shell, :path => "haproxy1-setup.sh"
 
   end
   config.vm.define :haproxy2, primary: true do |haproxy2_config|
@@ -26,7 +26,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     #haproxy2_config.vm.network :forwarded_port, guest: 80, host: 8081
 
     haproxy2_config.vm.network :private_network, ip: "172.28.33.12"
-    haproxy2_config.vm.provision :shell, :path => "haproxy-setup.sh"
+    haproxy2_config.vm.provision :shell, :path => "haproxy2-setup.sh"
 
   end
   config.vm.define :web1 do |web1_config|
@@ -44,20 +44,20 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     web2_config.vm.provision :shell, :path => "web-setup.sh"
 
   end
-#  config.vm.define :web3 do |web3_config|
-#
-#    web3_config.vm.hostname = 'web3'
-#    web3_config.vm.network :private_network, ip: "172.28.33.13"
-#    web3_config.vm.provision :shell, :path => "web-setup.sh"
-#
-#
-#  end
-#  config.vm.define :web4 do |web4_config|
-#
-#    web4_config.vm.hostname = 'web4'
-#    web4_config.vm.network :private_network, ip: "172.28.33.14"
-#    web4_config.vm.provision :shell, :path => "web-setup.sh"
-#
-#
-#  end
+  config.vm.define :web3 do |web3_config|
+
+    web3_config.vm.hostname = 'web3'
+    web3_config.vm.network :private_network, ip: "172.28.33.15"
+    web3_config.vm.provision :shell, :path => "web-setup.sh"
+
+
+  end
+  config.vm.define :web4 do |web4_config|
+
+    web4_config.vm.hostname = 'web4'
+    web4_config.vm.network :private_network, ip: "172.28.33.16"
+    web4_config.vm.provision :shell, :path => "web-setup.sh"
+
+
+  end
 end
