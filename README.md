@@ -33,10 +33,11 @@ This is the toolset I used to present on load balancers at University of Nebrask
 9.  Open up [http://localhost:8081/](http://localhost:8081/) in your host's browser.  This is the load balanced interface to the two web servers.  **Note** this is port forwarded via your actual host, and will be accessible via your externally accessible IP address - you can access test the load balancer from another workstation if you wish.
 10.  Open up [http://172.28.33.11:8081/](http://172.28.33.11:8080/haproxy?stats) in your host's browser.  This is the load balanced interface for Haproxy1.
 11.  Open up [http://172.28.33.12:8081/](http://172.28.33.12:8080/haproxy?stats) in your host's browser.  This is the load balanced interface for Haproxy2.
-12.  Open up [http://172.28.33.13/](http://172.28.33.11/) in a browser to see if web1's Apache is working.
-13.  Open up [http://172.28.33.14/](http://172.28.33.12/) in a browser to see if web2's Apache is working.
-14.  Open up [http://172.28.33.15/](http://172.28.33.11/) in a browser to see if web3's Apache is working.
-15.  Open up [http://172.28.33.16/](http://172.28.33.12/) in a browser to see if web4's Apache is working.
+12.  Open up [http://172.28.33.13/](http://172.28.33.13/) in a browser to see if web1's Apache is working.
+13.  Open up [http://172.28.33.14/](http://172.28.33.14/) in a browser to see if web2's Apache is working.
+14.  Open up [http://172.28.33.15/](http://172.28.33.15/) in a browser to see if web3's Apache is working.
+15.  Open up [http://172.28.33.16/](http://172.28.33.16/) in a browser to see if web4's Apache is working.
+15.  Open up [http://172.28.33.10/](http://172.28.33.10/) in a browser to see if Keepalived is working.
 16.  To see the Apache access logs on web1 and web2, run ``` sudo tail -f /var/log/apache2/access.log ```  If you'd like to filter out the "pings" from the load balancer, run ``` sudo tail -f /var/log/apache2/access.log | grep -v OPTIONS ```
 17.  To stop Apache on one of the webservers to simulate an outage, run ``` sudo service apache2 stop ```  To start it again, run ``` sudo service apache2 start ```
 18.  To make changes to haproxy, edit the config file with ``` sudo nano /etc/haproxy/haproxy.cfg ```  When you want to apply the changes, run ``` sudo service haproxy reload ```  If you break things and want to reset back, just run ``` sudo cp /etc/haproxy/haproxy.cfg.orig /etc/haproxy/haproxy.cfg && sudo service haproxy reload ```
