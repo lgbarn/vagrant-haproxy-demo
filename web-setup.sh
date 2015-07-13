@@ -17,7 +17,22 @@ EOD
   perl -pi -e  's/^LogFormat "\%h (.* combined)$/LogFormat "%h %{X-Forwarded-For}i $1/' /etc/httpd/conf/httpd.conf
   /sbin/service httpd restart
 
-cat > /var/www/hello.php <<EOD
+SERVER=`uname -n`
+cat > /var/www/html/index.html <<EOD
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<h1>${SERVER} Test Page</h1>
+
+</body>
+</html>
+EOD
+
+cat > /var/www/html/hello.php <<EOD
 <html>
  <head>
   <title>PHP Test</title>
