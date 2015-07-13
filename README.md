@@ -22,13 +22,13 @@ This is the toolset I used to present on load balancers at University of Nebrask
 3.  Either clone this repo with ``` git clone https://github.com/justintime/vagrant-haproxy-demo.git ``` or just download the [current zip file](https://github.com/justintime/vagrant-haproxy-demo/archive/master.zip) and extract it in an empty directory.
 
 # Getting started
-1.  Open 3 terminal windows -- one for each host.  Change to the directory containing the Vagrantfile from step 3 above.
+1.  Open 6 terminal windows -- one for each host.  Change to the directory containing the Vagrantfile from step 3 above.
 2.  In terminal #1, run ``` vagrant up haproxy1 && vagrant ssh haproxy1 ```
-3.  In terminal #1, run ``` vagrant up haproxy2 && vagrant ssh haproxy2 ```
-4.  In terminal #2, run ``` vagrant up web1 && vagrant ssh web1 ```
-5.  In terminal #3, run ``` vagrant up web2 && vagrant ssh web2 ```
-6.  In terminal #2, run ``` vagrant up web3 && vagrant ssh web3 ```
-7.  In terminal #3, run ``` vagrant up web4 && vagrant ssh web4 ```
+3.  In terminal #2, run ``` vagrant up haproxy2 && vagrant ssh haproxy2 ```
+4.  In terminal #3, run ``` vagrant up web1 && vagrant ssh web1 ```
+5.  In terminal #4, run ``` vagrant up web2 && vagrant ssh web2 ```
+6.  In terminal #5, run ``` vagrant up web3 && vagrant ssh web3 ```
+7.  In terminal #6, run ``` vagrant up web4 && vagrant ssh web4 ```
 8.  Open up [http://localhost:8080/haproxy?stat](http://localhost:8080/haproxy?stats) in your host's browser.  This is the HAProxy admin interface.
 9.  Open up [http://localhost:8081/](http://localhost:8081/) in your host's browser.  This is the load balanced interface to the two web servers.  **Note** this is port forwarded via your actual host, and will be accessible via your externally accessible IP address - you can access test the load balancer from another workstation if you wish.
 10.  Open up [http://172.28.33.11:8081/](http://172.28.33.11:8080/haproxy?stats) in your host's browser.  This is the load balanced interface for Haproxy1.
