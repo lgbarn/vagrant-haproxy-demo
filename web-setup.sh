@@ -42,3 +42,15 @@ cat > /var/www/html/hello.php <<EOD
  </body>
 </html>
 EOD
+
+  cat > /etc/sysctl.conf <<EOD
+
+net.ipv4.tcp_tw_recycle = 1
+net.ipv4.tcp_tw_reuse = 1
+net.ipv4.ip_local_port_range = 15000    61000
+net.ipv4.tcp_fin_timeout = 15
+
+EOD
+
+sysctl -p
+
