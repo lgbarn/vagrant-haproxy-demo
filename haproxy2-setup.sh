@@ -22,16 +22,33 @@ ENABLED=1
 #EXTRAOPTS="-de -m 16"
 EOD
 
+mkdir -p /etc/haproxy/errors
+touch /etc/haproxy/errors/400.http
+touch /etc/haproxy/errors/403.http
+touch /etc/haproxy/errors/408.http
+touch /etc/haproxy/errors/500.http
+touch /etc/haproxy/errors/502.http
+touch /etc/haproxy/errors/503.http
+touch /etc/haproxy/errors/504.http
+
   cat > /etc/haproxy/haproxy.cfg <<EOD
 global
     daemon
-    maxconn 256
+    maxconn 4096
+    stats socket /var/run/haproxy.sock level admin
 
 defaults
     mode http
     timeout connect 5000ms
     timeout client 50000ms
     timeout server 50000ms
+    errorfile 400 /etc/haproxy/errors/400.http
+    errorfile 403 /etc/haproxy/errors/403.http
+    errorfile 408 /etc/haproxy/errors/408.http
+    errorfile 500 /etc/haproxy/errors/500.http
+    errorfile 502 /etc/haproxy/errors/502.http
+    errorfile 503 /etc/haproxy/errors/503.http
+    errorfile 504 /etc/haproxy/errors/504.http
 
 frontend http-in
     bind *:80
@@ -46,10 +63,10 @@ backend webservers
     option httpchk
     option forwardfor
     option http-server-close
-    server web1 172.28.33.13:80 maxconn 32 check
-    server web2 172.28.33.14:80 maxconn 32 check
-    server web3 172.28.33.15:80 maxconn 32 check
-    server web4 172.28.33.16:80 maxconn 32 check
+    server web1 172.28.33.13:80 check inter 5000
+    server web2 172.28.33.14:80 check inter 5000
+    server web3 172.28.33.15:80 check inter 5000
+    server web4 172.28.33.16:80 check inter 5000
 
 listen admin
     bind *:8080
@@ -74,7 +91,7 @@ global_defs {
 
 vrrp_instance VI_1 {
     state BACKUP
-    interface eth0
+    interface eth1
     virtual_router_id 51
     priority 100
     advert_int 1
@@ -86,7 +103,7 @@ vrrp_instance VI_1 {
 virtual_server 172.28.33.10 80 {
     delay_loop 6
     lb_algo rr
-    #lb_kind NAT
+    lb_kind DR
     persistence_timeout 50
     protocol TCP
    # sorry_server 192.168.200.200 1358
@@ -96,9 +113,11 @@ virtual_server 172.28.33.10 80 {
         HTTP_GET {
             url {
               path /hello.php
-              connect_timeout 3
-            #  digest 640205b7b0fc66c1ea91c463fac6334d
+              digest 1490068c61809bc997ea3186b247ef93
             }
+            connect_timeout 3
+            nb_ger_retry 3
+            delay_before_retry 2
         }
     }
 
@@ -107,9 +126,11 @@ virtual_server 172.28.33.10 80 {
         HTTP_GET {
             url {
               path /hello.php
-              connect_timeout 3
-            #  digest 640205b7b0fc66c1ea91c463fac6334c
+              digest 1490068c61809bc997ea3186b247ef93
             }
+            connect_timeout 3
+            nb_ger_retry 3
+            delay_before_retry 2
         }
     }
 }
@@ -124,6 +145,7 @@ net.ipv4.tcp_tw_recycle = 1
 net.ipv4.tcp_tw_reuse = 1
 net.ipv4.ip_local_port_range = 15000    61000
 net.ipv4.tcp_fin_timeout = 15
+net.ipv4.tcp_max_tw_buckets = 524288
 
 EOD
 
