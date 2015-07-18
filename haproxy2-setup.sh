@@ -5,6 +5,9 @@ if [ ! -f /etc/haproxy/haproxy.cfg ]; then
   # Install haproxy
   yum -y install haproxy
   yum -y install keepalived
+  yum -y install nc
+  rpm -e irqbalance
+  rpm -ivh http://pkgs.repoforge.org/socat/socat-1.7.2.4-1.el6.rf.x86_64.rpm
   chkconfig haproxy on
   chkconfig keepalived on
   service iptables save
