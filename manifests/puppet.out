@@ -1,0 +1,772 @@
+[0;36mDebug: Runtime environment: puppet_version=4.2.1, ruby_version=2.1.6, run_mode=user, default_encoding=UTF-8[0m
+[0;36mDebug: Evicting cache entry for environment 'production'[0m
+[0;36mDebug: Caching environment 'production' (ttl = 0 sec)[0m
+[0;36mDebug: Evicting cache entry for environment 'production'[0m
+[0;36mDebug: Caching environment 'production' (ttl = 0 sec)[0m
+[0;36mDebug: Loading external facts from /opt/puppetlabs/puppet/cache/facts.d[0m
+[0;32mInfo: Loading facts[0m
+[0;36mDebug: Loading facts from /etc/puppetlabs/code/environments/production/modules/keepalived/lib/facter/keepalived_version.rb[0m
+[0;32mInfo: Loading facts[0m
+[0;36mDebug: Loading facts from /etc/puppetlabs/code/environments/production/modules/stdlib/lib/facter/facter_dot_d.rb[0m
+[0;36mDebug: Loading facts from /etc/puppetlabs/code/environments/production/modules/stdlib/lib/facter/pe_version.rb[0m
+[0;36mDebug: Loading facts from /etc/puppetlabs/code/environments/production/modules/stdlib/lib/facter/puppet_vardir.rb[0m
+[0;36mDebug: Loading facts from /etc/puppetlabs/code/environments/production/modules/stdlib/lib/facter/root_home.rb[0m
+[0;32mInfo: Loading facts[0m
+[0;36mDebug: Loading facts from /etc/puppetlabs/code/environments/production/modules/haproxy/lib/facter/haproxy_version.rb[0m
+[0;32mInfo: Loading facts[0m
+[0;36mDebug: Loading facts from /etc/puppetlabs/code/environments/production/modules/concat/lib/facter/concat_basedir.rb[0m
+[0;36mDebug: Facter: fact "facterversion" has resolved to "3.0.2".[0m
+[0;36mDebug: Facter: searching "/opt/puppetlabs/facter/facts.d" for external facts.[0m
+[0;36mDebug: Facter: skipping external facts for "/etc/facter/facts.d": No such file or directory[0m
+[0;36mDebug: Facter: skipping external facts for "/etc/puppetlabs/facter/facts.d": No such file or directory[0m
+[0;36mDebug: Facter: searching "/opt/puppetlabs/puppet/cache/facts.d" for external facts.[0m
+[0;36mDebug: Facter: no external facts were found.[0m
+[0;36mDebug: Facter: loading all custom facts.[0m
+[0;36mDebug: Facter: searching for custom facts in /etc/puppetlabs/code/environments/production/modules/keepalived/lib/facter.[0m
+[0;32mInfo: Facter: loading custom facts from /etc/puppetlabs/code/environments/production/modules/keepalived/lib/facter/keepalived_version.rb.[0m
+[0;36mDebug: Facter: searching for custom facts in /etc/puppetlabs/code/environments/production/modules/stdlib/lib/facter.[0m
+[0;32mInfo: Facter: loading custom facts from /etc/puppetlabs/code/environments/production/modules/stdlib/lib/facter/facter_dot_d.rb.[0m
+[0;32mInfo: Facter: loading custom facts from /etc/puppetlabs/code/environments/production/modules/stdlib/lib/facter/pe_version.rb.[0m
+[0;32mInfo: Facter: loading custom facts from /etc/puppetlabs/code/environments/production/modules/stdlib/lib/facter/puppet_vardir.rb.[0m
+[0;32mInfo: Facter: loading custom facts from /etc/puppetlabs/code/environments/production/modules/stdlib/lib/facter/root_home.rb.[0m
+[0;36mDebug: Facter: searching for custom facts in /etc/puppetlabs/code/environments/production/modules/haproxy/lib/facter.[0m
+[0;32mInfo: Facter: loading custom facts from /etc/puppetlabs/code/environments/production/modules/haproxy/lib/facter/haproxy_version.rb.[0m
+[0;36mDebug: Facter: executing command: /bin/sh -c /usr/sbin/haproxy -v 2>&1[0m
+[0;36mDebug: Facter: HA-Proxy version 1.5.4 2014/09/02
+Copyright 2000-2014 Willy Tarreau <w@1wt.eu>[0m
+[0;36mDebug: Facter: process exited with status code 0.[0m
+[0;36mDebug: Facter: searching for custom facts in /etc/puppetlabs/code/environments/production/modules/concat/lib/facter.[0m
+[0;32mInfo: Facter: loading custom facts from /etc/puppetlabs/code/environments/production/modules/concat/lib/facter/concat_basedir.rb.[0m
+[0;36mDebug: Facter: searching for custom facts in /etc/puppetlabs/code/environments/production/modules/keepalived/lib/facter.[0m
+[0;36mDebug: Facter: searching for custom facts in /etc/puppetlabs/code/environments/production/modules/stdlib/lib/facter.[0m
+[0;36mDebug: Facter: searching for custom facts in /etc/puppetlabs/code/environments/production/modules/haproxy/lib/facter.[0m
+[0;36mDebug: Facter: searching for custom facts in /etc/puppetlabs/code/environments/production/modules/concat/lib/facter.[0m
+[0;36mDebug: Facter: fact "agent_specified_environment" has resolved to "production".[0m
+[0;36mDebug: Facter: fact "concat_basedir" has resolved to "/opt/puppetlabs/puppet/cache/concat".[0m
+[0;36mDebug: Facter: fact "haproxy_version" has resolved to "1.5.4".[0m
+[0;36mDebug: Facter: fact "puppetversion" has resolved to "4.2.1".[0m
+[0;36mDebug: Facter: fact "pe_version" resolved to null and will not be added.[0m
+[0;36mDebug: Facter: fact "is_pe" has resolved to false.[0m
+[0;36mDebug: Facter: fact "pe_major_version" resolved to null and will not be added.[0m
+[0;36mDebug: Facter: fact "pe_minor_version" resolved to null and will not be added.[0m
+[0;36mDebug: Facter: fact "pe_patch_version" resolved to null and will not be added.[0m
+[0;36mDebug: Facter: fact "puppet_vardir" has resolved to "/opt/puppetlabs/puppet/cache".[0m
+[0;36mDebug: Facter: resolving kernel facts.[0m
+[0;36mDebug: Facter: fact "kernel" has resolved to "Linux".[0m
+[0;36mDebug: Facter: fact "kernelrelease" has resolved to "2.6.32-504.el6.x86_64".[0m
+[0;36mDebug: Facter: fact "kernelmajversion" has resolved to "2.6".[0m
+[0;36mDebug: Facter: fact "kernelversion" has resolved to "2.6.32".[0m
+[0;36mDebug: Facter: executing command: /bin/sh -c /usr/bin/getent passwd root[0m
+[0;36mDebug: Facter: root:x:0:0:root:/root:/bin/bash[0m
+[0;36mDebug: Facter: process exited with status code 0.[0m
+[0;36mDebug: Facter: fact "root_home" has resolved to "/root".[0m
+[0;36mDebug: Facter: resolving ruby facts.[0m
+[0;36mDebug: Facter: fact "rubyplatform" has resolved to "x86_64-linux".[0m
+[0;36mDebug: Facter: fact "rubysitedir" has resolved to "/opt/puppetlabs/puppet/lib/ruby/site_ruby/2.1.0".[0m
+[0;36mDebug: Facter: fact "rubyversion" has resolved to "2.1.6".[0m
+[0;36mDebug: Facter: fact "ruby" has resolved to {
+  platform => "x86_64-linux",
+  sitedir => "/opt/puppetlabs/puppet/lib/ruby/site_ruby/2.1.0",
+  version => "2.1.6"
+}.[0m
+[0;36mDebug: Facter: resolving path facts.[0m
+[0;36mDebug: Facter: fact "path" has resolved to "/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/opt/puppetlabs/bin:/root/bin".[0m
+[0;36mDebug: Facter: resolving EC2 facts.[0m
+[0;36mDebug: Facter: resolving virtualization facts.[0m
+[0;36mDebug: Facter: resolving desktop management interface facts.[0m
+[0;36mDebug: Facter: fact "bios_vendor" has resolved to "innotek GmbH".[0m
+[0;36mDebug: Facter: fact "bios_version" has resolved to "VirtualBox".[0m
+[0;36mDebug: Facter: fact "bios_release_date" has resolved to "12/01/2006".[0m
+[0;36mDebug: Facter: fact "boardmanufacturer" has resolved to "Oracle Corporation".[0m
+[0;36mDebug: Facter: fact "boardproductname" has resolved to "VirtualBox".[0m
+[0;36mDebug: Facter: fact "boardserialnumber" has resolved to "0".[0m
+[0;36mDebug: Facter: fact "productname" has resolved to "VirtualBox".[0m
+[0;36mDebug: Facter: fact "serialnumber" has resolved to "0".[0m
+[0;36mDebug: Facter: fact "uuid" has resolved to "D2B9FAC1-80DA-4C3C-B6A9-DD187FB2EDD3".[0m
+[0;36mDebug: Facter: fact "chassistype" has resolved to "Other".[0m
+[0;36mDebug: Facter: fact "manufacturer" has resolved to "innotek GmbH".[0m
+[0;36mDebug: Facter: fact "dmi" has resolved to {
+  bios => {
+    release_date => "12/01/2006",
+    vendor => "innotek GmbH",
+    version => "VirtualBox"
+  },
+  board => {
+    manufacturer => "Oracle Corporation",
+    product => "VirtualBox",
+    serial_number => "0"
+  },
+  chassis => {
+    type => "Other"
+  },
+  manufacturer => "innotek GmbH",
+  product => {
+    name => "VirtualBox",
+    serial_number => "0",
+    uuid => "D2B9FAC1-80DA-4C3C-B6A9-DD187FB2EDD3"
+  }
+}.[0m
+[0;36mDebug: Facter: executing command: /opt/puppetlabs/puppet/bin/virt-what[0m
+[0;36mDebug: Facter: virtualbox[0m
+[0;36mDebug: Facter: completed processing output: closing child pipes.[0m
+[0;36mDebug: Facter: process exited with status code 0.[0m
+[0;36mDebug: Facter: fact "is_virtual" has resolved to true.[0m
+[0;36mDebug: Facter: fact "virtual" has resolved to "virtualbox".[0m
+[0;36mDebug: Facter: EC2 facts are unavailable: not running under an EC2 instance.[0m
+[0;36mDebug: Facter: resolving GCE facts.[0m
+[0;36mDebug: Facter: not running under a GCE instance.[0m
+[0;36mDebug: Facter: resolving augeas facts.[0m
+[0;36mDebug: Facter: executing command: /opt/puppetlabs/puppet/bin/augtool --version[0m
+[0;36mDebug: Facter: augtool 1.4.0 <http://augeas.net/>[0m
+[0;36mDebug: Facter: completed processing output: closing child pipes.[0m
+[0;36mDebug: Facter: process exited with status code 0.[0m
+[0;36mDebug: Facter: fact "augeasversion" has resolved to "1.4.0".[0m
+[0;36mDebug: Facter: fact "augeas" has resolved to {
+  version => "1.4.0"
+}.[0m
+[0;36mDebug: Facter: resolving operating system facts.[0m
+[0;36mDebug: Facter: executing command: lsb_release -a[0m
+[0;36mDebug: Facter: lsb_release was not found on the PATH.[0m
+[0;36mDebug: Facter: fact "osfamily" has resolved to "RedHat".[0m
+[0;36mDebug: Facter: fact "operatingsystemmajrelease" has resolved to "6".[0m
+[0;36mDebug: Facter: fact "operatingsystemrelease" has resolved to "6.6".[0m
+[0;36mDebug: Facter: fact "hardwaremodel" has resolved to "x86_64".[0m
+[0;36mDebug: Facter: fact "architecture" has resolved to "x86_64".[0m
+[0;36mDebug: Facter: fact "operatingsystem" has resolved to "CentOS".[0m
+[0;36mDebug: Facter: fact "selinux" has resolved to false.[0m
+[0;36mDebug: Facter: fact "os" has resolved to {
+  architecture => "x86_64",
+  family => "RedHat",
+  hardware => "x86_64",
+  name => "CentOS",
+  release => {
+    full => "6.6",
+    major => "6",
+    minor => "6"
+  },
+  selinux => {
+    enabled => false
+  }
+}.[0m
+[0;36mDebug: Facter: resolving networking facts.[0m
+[0;36mDebug: Facter: hostname "haproxy1" could not be resolved: hostname may not be externally resolvable.[0m
+[0;36mDebug: Facter: searching "/var/lib/dhclient" for dhclient lease files.[0m
+[0;36mDebug: Facter: reading "/var/lib/dhclient/dhclient-eth0.leases" for dhclient lease information.[0m
+[0;36mDebug: Facter: searching "/var/lib/dhcp" for dhclient lease files.[0m
+[0;36mDebug: Facter: searching "/var/lib/dhcp3" for dhclient lease files.[0m
+[0;36mDebug: Facter: searching "/var/lib/NetworkManager" for dhclient lease files.[0m
+[0;36mDebug: Facter: searching "/var/db" for dhclient lease files.[0m
+[0;36mDebug: Facter: executing command: dhcpcd -U eth1[0m
+[0;36mDebug: Facter: dhcpcd was not found on the PATH.[0m
+[0;36mDebug: Facter: executing command: dhcpcd -U lo[0m
+[0;36mDebug: Facter: dhcpcd was not found on the PATH.[0m
+[0;36mDebug: Facter: fact "hostname" has resolved to "haproxy1".[0m
+[0;36mDebug: Facter: fact "domain" has resolved to "home".[0m
+[0;36mDebug: Facter: fact "fqdn" has resolved to "haproxy1.home".[0m
+[0;36mDebug: Facter: fact "ipaddress_eth0" has resolved to "10.0.2.15".[0m
+[0;36mDebug: Facter: fact "ipaddress" has resolved to "10.0.2.15".[0m
+[0;36mDebug: Facter: fact "ipaddress6_eth0" has resolved to "fe80::a00:27ff:fea2:3a5".[0m
+[0;36mDebug: Facter: fact "ipaddress6" has resolved to "fe80::a00:27ff:fea2:3a5".[0m
+[0;36mDebug: Facter: fact "netmask_eth0" has resolved to "255.255.255.0".[0m
+[0;36mDebug: Facter: fact "netmask" has resolved to "255.255.255.0".[0m
+[0;36mDebug: Facter: fact "netmask6_eth0" has resolved to "ffff:ffff:ffff:ffff::".[0m
+[0;36mDebug: Facter: fact "netmask6" has resolved to "ffff:ffff:ffff:ffff::".[0m
+[0;36mDebug: Facter: fact "network_eth0" has resolved to "10.0.2.0".[0m
+[0;36mDebug: Facter: fact "network" has resolved to "10.0.2.0".[0m
+[0;36mDebug: Facter: fact "network6_eth0" has resolved to "fe80::".[0m
+[0;36mDebug: Facter: fact "network6" has resolved to "fe80::".[0m
+[0;36mDebug: Facter: fact "macaddress_eth0" has resolved to "08:00:27:a2:03:a5".[0m
+[0;36mDebug: Facter: fact "macaddress" has resolved to "08:00:27:a2:03:a5".[0m
+[0;36mDebug: Facter: fact "mtu_eth0" has resolved to 1500.[0m
+[0;36mDebug: Facter: fact "ipaddress_eth1" has resolved to "172.28.33.11".[0m
+[0;36mDebug: Facter: fact "ipaddress6_eth1" has resolved to "fe80::a00:27ff:fee3:652d".[0m
+[0;36mDebug: Facter: fact "netmask_eth1" has resolved to "255.255.255.0".[0m
+[0;36mDebug: Facter: fact "netmask6_eth1" has resolved to "ffff:ffff:ffff:ffff::".[0m
+[0;36mDebug: Facter: fact "network_eth1" has resolved to "172.28.33.0".[0m
+[0;36mDebug: Facter: fact "network6_eth1" has resolved to "fe80::".[0m
+[0;36mDebug: Facter: fact "macaddress_eth1" has resolved to "08:00:27:e3:65:2d".[0m
+[0;36mDebug: Facter: fact "mtu_eth1" has resolved to 1500.[0m
+[0;36mDebug: Facter: fact "ipaddress_lo" has resolved to "127.0.0.1".[0m
+[0;36mDebug: Facter: fact "ipaddress6_lo" has resolved to "::1".[0m
+[0;36mDebug: Facter: fact "netmask_lo" has resolved to "255.0.0.0".[0m
+[0;36mDebug: Facter: fact "netmask6_lo" has resolved to "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff".[0m
+[0;36mDebug: Facter: fact "network_lo" has resolved to "127.0.0.0".[0m
+[0;36mDebug: Facter: fact "network6_lo" has resolved to "::1".[0m
+[0;36mDebug: Facter: fact "mtu_lo" has resolved to 65536.[0m
+[0;36mDebug: Facter: fact "interfaces" has resolved to "eth0,eth1,lo".[0m
+[0;36mDebug: Facter: fact "dhcp_servers" has resolved to {
+  eth0 => "10.0.2.2",
+  system => "10.0.2.2"
+}.[0m
+[0;36mDebug: Facter: fact "networking" has resolved to {
+  dhcp => "10.0.2.2",
+  domain => "home",
+  fqdn => "haproxy1.home",
+  hostname => "haproxy1",
+  interfaces => {
+    eth0 => {
+      dhcp => "10.0.2.2",
+      ip => "10.0.2.15",
+      ip6 => "fe80::a00:27ff:fea2:3a5",
+      mac => "08:00:27:a2:03:a5",
+      mtu => 1500,
+      netmask => "255.255.255.0",
+      netmask6 => "ffff:ffff:ffff:ffff::",
+      network => "10.0.2.0",
+      network6 => "fe80::"
+    },
+    eth1 => {
+      ip => "172.28.33.11",
+      ip6 => "fe80::a00:27ff:fee3:652d",
+      mac => "08:00:27:e3:65:2d",
+      mtu => 1500,
+      netmask => "255.255.255.0",
+      netmask6 => "ffff:ffff:ffff:ffff::",
+      network => "172.28.33.0",
+      network6 => "fe80::"
+    },
+    lo => {
+      ip => "127.0.0.1",
+      ip6 => "::1",
+      mtu => 65536,
+      netmask => "255.0.0.0",
+      netmask6 => "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+      network => "127.0.0.0",
+      network6 => "::1"
+    }
+  },
+  ip => "10.0.2.15",
+  ip6 => "fe80::a00:27ff:fea2:3a5",
+  mac => "08:00:27:a2:03:a5",
+  mtu => 1500,
+  netmask => "255.255.255.0",
+  netmask6 => "ffff:ffff:ffff:ffff::",
+  network => "10.0.2.0",
+  network6 => "fe80::"
+}.[0m
+[0;36mDebug: Facter: resolving disk facts.[0m
+[0;36mDebug: Facter: fact "blockdevice_sda_vendor" has resolved to "ATA".[0m
+[0;36mDebug: Facter: fact "blockdevice_sda_model" has resolved to "VBOX HARDDISK".[0m
+[0;36mDebug: Facter: fact "blockdevice_sda_size" has resolved to 21474836480.[0m
+[0;36mDebug: Facter: fact "blockdevices" has resolved to "sda".[0m
+[0;36mDebug: Facter: fact "disks" has resolved to {
+  sda => {
+    model => "VBOX HARDDISK",
+    size => "20.00 GiB",
+    size_bytes => 21474836480,
+    vendor => "ATA"
+  }
+}.[0m
+[0;36mDebug: Facter: resolving processor facts.[0m
+[0;36mDebug: Facter: executing command: /bin/uname -p[0m
+[0;36mDebug: Facter: x86_64[0m
+[0;36mDebug: Facter: process exited with status code 0.[0m
+[0;36mDebug: Facter: fact "hardwareisa" has resolved to "x86_64".[0m
+[0;36mDebug: Facter: fact "processorcount" has resolved to 1.[0m
+[0;36mDebug: Facter: fact "physicalprocessorcount" has resolved to 1.[0m
+[0;36mDebug: Facter: fact "processor0" has resolved to "Intel(R) Core(TM) i7-3632QM CPU @ 2.20GHz".[0m
+[0;36mDebug: Facter: fact "processors" has resolved to {
+  count => 1,
+  isa => "x86_64",
+  models => [
+    "Intel(R) Core(TM) i7-3632QM CPU @ 2.20GHz"
+  ],
+  physicalcount => 1
+}.[0m
+[0;36mDebug: Facter: resolving uptime facts.[0m
+[0;36mDebug: Facter: fact "uptime_seconds" has resolved to 4365.[0m
+[0;36mDebug: Facter: fact "uptime_hours" has resolved to 1.[0m
+[0;36mDebug: Facter: fact "uptime_days" has resolved to 0.[0m
+[0;36mDebug: Facter: fact "uptime" has resolved to "1:12 hours".[0m
+[0;36mDebug: Facter: fact "system_uptime" has resolved to {
+  days => 0,
+  hours => 1,
+  seconds => 4365,
+  uptime => "1:12 hours"
+}.[0m
+[0;36mDebug: Facter: resolving ssh facts.[0m
+[0;36mDebug: Facter: ssh_host_ecdsa_key.pub could not be located.[0m
+[0;36mDebug: Facter: ssh_host_ed25519_key.pub could not be located.[0m
+[0;36mDebug: Facter: fact "sshdsakey" has resolved to "AAAAB3NzaC1kc3MAAACBAMpNbf5YqBjAdQk/e8eKHCcpfi/8tMRaQnv79Qc6aoAoLs/RahH4btNlFl33b0mQO9lGCdoYBlzrabtsM9GQDaKXUzKUMSs4Z6BYl4iR3rYjGJnLPbauYta+GmuhnVe03Jm7Qh6B3+fOf69werCZhbLBNgUZy7jLSVa9bZaVIXKXAAAAFQCJYPjzwWseAjsO+q9CrZoAnGEX1wAAAIAY0TmAkZ7EzzTCh/46VYnuHXvxHA/QjwWL3/y8x2loFWNOUTK5XjFNaiX6/wRD1bKx5vOORlj0kPF6Y1BeDBg3GxCPhD+yvhXk1kV+q8NMn7VFEsM0fl2GNyC5W8UTfrvc7LySv1Ughp4xTIrge2SoL0z7PAFbvhiqPlLa+GZvCwAAAIAChpZcgUIw6Dp+LsTWP0a2oSuCBnQmXxgMFs2eyQ3aRFZw3BHPEXDyCAgcX42n8td0oKuKlc1YKqqbahroYuGMNxmwKuT1jhl5ptXo8VqWJEwRvPMkc7tuSsCmx1yHPKETczkhFRUDBsl+diIhBuz1oz+Trs5gx0R7KJRlk6Tzrw==".[0m
+[0;36mDebug: Facter: fact "sshfp_dsa" has resolved to "SSHFP 2 1 7f9807a6b688fa59b1ea9252f828e2865dd40b69
+SSHFP 2 2 b5688457cef33c734acaa07e165eeec9562c7fb2e7fe438d2ebc12e7e3bcfb7f".[0m
+[0;36mDebug: Facter: fact "sshrsakey" has resolved to "AAAAB3NzaC1yc2EAAAABIwAAAQEAxZd7JKRYq6pm2R44iSwbjqMu27jd6YN88YPEPCX7AXN+EJ1IYBqI7uMlnTfg1z70fxiVWskgY25iXkQ/R/GYmcgo/FuFcSFas+lSSHYtvQ9KdTzF59zB2gEU7yNCXP1fHuGyGRjPASVR0yASYueedP+lua9j0it77IMSqVQaOecqns8jw6wkvlqSXq2j5oymu7/lYZVBKLQsazVU1Kv9Dek/h43K9VVS3tiMPWBpZddPOTI0hEMj3Eb9Stqm+I2yUNq46T5huiLhV57r3DryvzV51tI2mF/QyooB4zccVBDQHs/yy4oGHqj4ZWamPSnH9hXcWS0QMai2Bmj2j1Z4pQ==".[0m
+[0;36mDebug: Facter: fact "sshfp_rsa" has resolved to "SSHFP 1 1 74ad3b03d78f188f8bc1dbee74aa6e20df9ff6fd
+SSHFP 1 2 e8efdad67a2f98c5672f8efabe6df4cf66226c141b30a880633ee0601b426932".[0m
+[0;36mDebug: Facter: fact "ssh" has resolved to {
+  dsa => {
+    fingerprints => {
+      sha1 => "SSHFP 2 1 7f9807a6b688fa59b1ea9252f828e2865dd40b69",
+      sha256 => "SSHFP 2 2 b5688457cef33c734acaa07e165eeec9562c7fb2e7fe438d2ebc12e7e3bcfb7f"
+    },
+    key => "AAAAB3NzaC1kc3MAAACBAMpNbf5YqBjAdQk/e8eKHCcpfi/8tMRaQnv79Qc6aoAoLs/RahH4btNlFl33b0mQO9lGCdoYBlzrabtsM9GQDaKXUzKUMSs4Z6BYl4iR3rYjGJnLPbauYta+GmuhnVe03Jm7Qh6B3+fOf69werCZhbLBNgUZy7jLSVa9bZaVIXKXAAAAFQCJYPjzwWseAjsO+q9CrZoAnGEX1wAAAIAY0TmAkZ7EzzTCh/46VYnuHXvxHA/QjwWL3/y8x2loFWNOUTK5XjFNaiX6/wRD1bKx5vOORlj0kPF6Y1BeDBg3GxCPhD+yvhXk1kV+q8NMn7VFEsM0fl2GNyC5W8UTfrvc7LySv1Ughp4xTIrge2SoL0z7PAFbvhiqPlLa+GZvCwAAAIAChpZcgUIw6Dp+LsTWP0a2oSuCBnQmXxgMFs2eyQ3aRFZw3BHPEXDyCAgcX42n8td0oKuKlc1YKqqbahroYuGMNxmwKuT1jhl5ptXo8VqWJEwRvPMkc7tuSsCmx1yHPKETczkhFRUDBsl+diIhBuz1oz+Trs5gx0R7KJRlk6Tzrw=="
+  },
+  rsa => {
+    fingerprints => {
+      sha1 => "SSHFP 1 1 74ad3b03d78f188f8bc1dbee74aa6e20df9ff6fd",
+      sha256 => "SSHFP 1 2 e8efdad67a2f98c5672f8efabe6df4cf66226c141b30a880633ee0601b426932"
+    },
+    key => "AAAAB3NzaC1yc2EAAAABIwAAAQEAxZd7JKRYq6pm2R44iSwbjqMu27jd6YN88YPEPCX7AXN+EJ1IYBqI7uMlnTfg1z70fxiVWskgY25iXkQ/R/GYmcgo/FuFcSFas+lSSHYtvQ9KdTzF59zB2gEU7yNCXP1fHuGyGRjPASVR0yASYueedP+lua9j0it77IMSqVQaOecqns8jw6wkvlqSXq2j5oymu7/lYZVBKLQsazVU1Kv9Dek/h43K9VVS3tiMPWBpZddPOTI0hEMj3Eb9Stqm+I2yUNq46T5huiLhV57r3DryvzV51tI2mF/QyooB4zccVBDQHs/yy4oGHqj4ZWamPSnH9hXcWS0QMai2Bmj2j1Z4pQ=="
+  }
+}.[0m
+[0;36mDebug: Facter: resolving id facts.[0m
+[0;36mDebug: Facter: fact "id" has resolved to "root".[0m
+[0;36mDebug: Facter: fact "gid" has resolved to "root".[0m
+[0;36mDebug: Facter: fact "identity" has resolved to {
+  gid => 0,
+  group => "root",
+  uid => 0,
+  user => "root"
+}.[0m
+[0;36mDebug: Facter: resolving timezone facts.[0m
+[0;36mDebug: Facter: fact "timezone" has resolved to "UTC".[0m
+[0;36mDebug: Facter: resolving file system facts.[0m
+[0;36mDebug: Facter: fact "mountpoints" has resolved to {
+  / => {
+    available => "17.00 GiB",
+    available_bytes => 18250866688,
+    capacity => "6.21%",
+    device => "/dev/mapper/VolGroup-lv_root",
+    filesystem => "ext4",
+    options => [
+      "rw"
+    ],
+    size => "18.12 GiB",
+    size_bytes => 19459338240,
+    used => "1.13 GiB",
+    used_bytes => 1208471552
+  },
+  /boot => {
+    available => "448.54 MiB",
+    available_bytes => 470323200,
+    capacity => "5.81%",
+    device => "/dev/sda1",
+    filesystem => "ext4",
+    options => [
+      "rw"
+    ],
+    size => "476.22 MiB",
+    size_bytes => 499355648,
+    used => "27.69 MiB",
+    used_bytes => 29032448
+  }
+}.[0m
+[0;36mDebug: Facter: fact "filesystems" has resolved to "ext4,iso9660".[0m
+[0;36mDebug: Facter: fact "partitions" has resolved to {
+  /dev/mapper/VolGroup-lv_root => {
+    filesystem => "ext4",
+    mount => "/",
+    size => "0 bytes",
+    size_bytes => 0,
+    uuid => "3550a748-f791-4a55-b62e-3ca480203c9b"
+  },
+  /dev/mapper/VolGroup-lv_swap => {
+    filesystem => "swap",
+    size => "0 bytes",
+    size_bytes => 0,
+    uuid => "214723be-6a44-4910-aee4-1dd188892b58"
+  },
+  /dev/sda1 => {
+    filesystem => "ext4",
+    mount => "/boot",
+    size => "500.00 MiB",
+    size_bytes => 524288000,
+    uuid => "0a2a03d5-a72b-4cc0-ab64-fe188ac2dfd7"
+  },
+  /dev/sda2 => {
+    filesystem => "LVM2_member",
+    size => "19.51 GiB",
+    size_bytes => 20949499904,
+    uuid => "wqDj0S-MIE8-RITx-Otf7-WsSe-5pPg-XYPCJw"
+  }
+}.[0m
+[0;36mDebug: Facter: resolving memory facts.[0m
+[0;36mDebug: Facter: fact "memoryfree" has resolved to "393.58 MiB".[0m
+[0;36mDebug: Facter: fact "memoryfree_mb" has resolved to 393.578.[0m
+[0;36mDebug: Facter: fact "memorysize" has resolved to "490.39 MiB".[0m
+[0;36mDebug: Facter: fact "memorysize_mb" has resolved to 490.391.[0m
+[0;36mDebug: Facter: fact "swapfree" has resolved to "992.00 MiB".[0m
+[0;36mDebug: Facter: fact "swapfree_mb" has resolved to 991.996.[0m
+[0;36mDebug: Facter: fact "swapsize" has resolved to "992.00 MiB".[0m
+[0;36mDebug: Facter: fact "swapsize_mb" has resolved to 991.996.[0m
+[0;36mDebug: Facter: fact "memory" has resolved to {
+  swap => {
+    available => "992.00 MiB",
+    available_bytes => 1040183296,
+    capacity => "0%",
+    total => "992.00 MiB",
+    total_bytes => 1040183296,
+    used => "0 bytes",
+    used_bytes => 0
+  },
+  system => {
+    available => "393.58 MiB",
+    available_bytes => 412696576,
+    capacity => "19.74%",
+    total => "490.39 MiB",
+    total_bytes => 514211840,
+    used => "96.81 MiB",
+    used_bytes => 101515264
+  }
+}.[0m
+[0;36mDebug: Facter: resolving load_average facts.[0m
+[0;36mDebug: Facter: fact "load_averages" has resolved to {
+  15m => 0,
+  1m => 0.04,
+  5m => 0.02
+}.[0m
+[0;36mDebug: Facter: resolving Xen facts.[0m
+[0;36mDebug: Evicting cache entry for environment 'production'[0m
+[0;36mDebug: Caching environment 'production' (ttl = 0 sec)[0m
+[0;36mDebug: importing '/etc/puppetlabs/code/environments/production/modules/haproxy/manifests/init.pp' in environment production[0m
+[0;36mDebug: Automatically imported haproxy from haproxy into production[0m
+[0;36mDebug: importing '/etc/puppetlabs/code/environments/production/modules/haproxy/manifests/params.pp' in environment production[0m
+[0;36mDebug: Automatically imported haproxy::params from haproxy/params into production[0m
+[0;36mDebug: Evicting cache entry for environment 'production'[0m
+[0;36mDebug: Caching environment 'production' (ttl = 0 sec)[0m
+[0;36mDebug: Evicting cache entry for environment 'production'[0m
+[0;36mDebug: Caching environment 'production' (ttl = 0 sec)[0m
+[0;36mDebug: hiera(): Hiera YAML backend starting[0m
+[0;36mDebug: hiera(): Looking up haproxy::package_ensure in YAML backend[0m
+[0;36mDebug: hiera(): Looking for data source nodes/haproxy1.home[0m
+[0;36mDebug: hiera(): Cannot find datafile /etc/puppetlabs/code/environments/production/hieradata/nodes/haproxy1.home.yaml, skipping[0m
+[0;36mDebug: hiera(): Looking for data source common[0m
+[0;36mDebug: hiera(): Cannot find datafile /etc/puppetlabs/code/environments/production/hieradata/common.yaml, skipping[0m
+[0;36mDebug: Evicting cache entry for environment 'production'[0m
+[0;36mDebug: Caching environment 'production' (ttl = 0 sec)[0m
+[0;36mDebug: hiera(): Looking up haproxy::package_name in YAML backend[0m
+[0;36mDebug: hiera(): Looking for data source nodes/haproxy1.home[0m
+[0;36mDebug: hiera(): Cannot find datafile /etc/puppetlabs/code/environments/production/hieradata/nodes/haproxy1.home.yaml, skipping[0m
+[0;36mDebug: hiera(): Looking for data source common[0m
+[0;36mDebug: hiera(): Cannot find datafile /etc/puppetlabs/code/environments/production/hieradata/common.yaml, skipping[0m
+[0;36mDebug: Evicting cache entry for environment 'production'[0m
+[0;36mDebug: Caching environment 'production' (ttl = 0 sec)[0m
+[0;36mDebug: hiera(): Looking up haproxy::service_ensure in YAML backend[0m
+[0;36mDebug: hiera(): Looking for data source nodes/haproxy1.home[0m
+[0;36mDebug: hiera(): Cannot find datafile /etc/puppetlabs/code/environments/production/hieradata/nodes/haproxy1.home.yaml, skipping[0m
+[0;36mDebug: hiera(): Looking for data source common[0m
+[0;36mDebug: hiera(): Cannot find datafile /etc/puppetlabs/code/environments/production/hieradata/common.yaml, skipping[0m
+[0;36mDebug: Evicting cache entry for environment 'production'[0m
+[0;36mDebug: Caching environment 'production' (ttl = 0 sec)[0m
+[0;36mDebug: hiera(): Looking up haproxy::service_manage in YAML backend[0m
+[0;36mDebug: hiera(): Looking for data source nodes/haproxy1.home[0m
+[0;36mDebug: hiera(): Cannot find datafile /etc/puppetlabs/code/environments/production/hieradata/nodes/haproxy1.home.yaml, skipping[0m
+[0;36mDebug: hiera(): Looking for data source common[0m
+[0;36mDebug: hiera(): Cannot find datafile /etc/puppetlabs/code/environments/production/hieradata/common.yaml, skipping[0m
+[0;36mDebug: Evicting cache entry for environment 'production'[0m
+[0;36mDebug: Caching environment 'production' (ttl = 0 sec)[0m
+[0;36mDebug: hiera(): Looking up haproxy::restart_command in YAML backend[0m
+[0;36mDebug: hiera(): Looking for data source nodes/haproxy1.home[0m
+[0;36mDebug: hiera(): Cannot find datafile /etc/puppetlabs/code/environments/production/hieradata/nodes/haproxy1.home.yaml, skipping[0m
+[0;36mDebug: hiera(): Looking for data source common[0m
+[0;36mDebug: hiera(): Cannot find datafile /etc/puppetlabs/code/environments/production/hieradata/common.yaml, skipping[0m
+[0;36mDebug: Evicting cache entry for environment 'production'[0m
+[0;36mDebug: Caching environment 'production' (ttl = 0 sec)[0m
+[0;36mDebug: hiera(): Looking up haproxy::custom_fragment in YAML backend[0m
+[0;36mDebug: hiera(): Looking for data source nodes/haproxy1.home[0m
+[0;36mDebug: hiera(): Cannot find datafile /etc/puppetlabs/code/environments/production/hieradata/nodes/haproxy1.home.yaml, skipping[0m
+[0;36mDebug: hiera(): Looking for data source common[0m
+[0;36mDebug: hiera(): Cannot find datafile /etc/puppetlabs/code/environments/production/hieradata/common.yaml, skipping[0m
+[0;36mDebug: Evicting cache entry for environment 'production'[0m
+[0;36mDebug: Caching environment 'production' (ttl = 0 sec)[0m
+[0;36mDebug: hiera(): Looking up haproxy::config_file in YAML backend[0m
+[0;36mDebug: hiera(): Looking for data source nodes/haproxy1.home[0m
+[0;36mDebug: hiera(): Cannot find datafile /etc/puppetlabs/code/environments/production/hieradata/nodes/haproxy1.home.yaml, skipping[0m
+[0;36mDebug: hiera(): Looking for data source common[0m
+[0;36mDebug: hiera(): Cannot find datafile /etc/puppetlabs/code/environments/production/hieradata/common.yaml, skipping[0m
+[0;36mDebug: Evicting cache entry for environment 'production'[0m
+[0;36mDebug: Caching environment 'production' (ttl = 0 sec)[0m
+[0;36mDebug: hiera(): Looking up haproxy::manage_service in YAML backend[0m
+[0;36mDebug: hiera(): Looking for data source nodes/haproxy1.home[0m
+[0;36mDebug: hiera(): Cannot find datafile /etc/puppetlabs/code/environments/production/hieradata/nodes/haproxy1.home.yaml, skipping[0m
+[0;36mDebug: hiera(): Looking for data source common[0m
+[0;36mDebug: hiera(): Cannot find datafile /etc/puppetlabs/code/environments/production/hieradata/common.yaml, skipping[0m
+[0;36mDebug: Evicting cache entry for environment 'production'[0m
+[0;36mDebug: Caching environment 'production' (ttl = 0 sec)[0m
+[0;36mDebug: hiera(): Looking up haproxy::enable in YAML backend[0m
+[0;36mDebug: hiera(): Looking for data source nodes/haproxy1.home[0m
+[0;36mDebug: hiera(): Cannot find datafile /etc/puppetlabs/code/environments/production/hieradata/nodes/haproxy1.home.yaml, skipping[0m
+[0;36mDebug: hiera(): Looking for data source common[0m
+[0;36mDebug: hiera(): Cannot find datafile /etc/puppetlabs/code/environments/production/hieradata/common.yaml, skipping[0m
+[0;36mDebug: importing '/etc/puppetlabs/code/environments/production/modules/haproxy/manifests/install.pp' in environment production[0m
+[0;36mDebug: Automatically imported haproxy::install from haproxy/install into production[0m
+[0;36mDebug: Evicting cache entry for environment 'production'[0m
+[0;36mDebug: Caching environment 'production' (ttl = 0 sec)[0m
+[0;36mDebug: Executing: '/bin/rpm --version'[0m
+[0;36mDebug: Executing: '/bin/rpm -ql rpm'[0m
+[0;36mDebug: Evicting cache entry for environment 'production'[0m
+[0;36mDebug: Caching environment 'production' (ttl = 0 sec)[0m
+[0;36mDebug: Executing: '/bin/rpm --version'[0m
+[0;36mDebug: Evicting cache entry for environment 'production'[0m
+[0;36mDebug: Caching environment 'production' (ttl = 0 sec)[0m
+[0;36mDebug: Evicting cache entry for environment 'production'[0m
+[0;36mDebug: Caching environment 'production' (ttl = 0 sec)[0m
+[0;36mDebug: importing '/etc/puppetlabs/code/environments/production/modules/haproxy/manifests/config.pp' in environment production[0m
+[0;36mDebug: Automatically imported haproxy::config from haproxy/config into production[0m
+[0;36mDebug: importing '/etc/puppetlabs/code/environments/production/modules/concat/manifests/init.pp' in environment production[0m
+[0;36mDebug: Automatically imported concat from concat into production[0m
+[0;36mDebug: importing '/etc/puppetlabs/code/environments/production/modules/concat/manifests/fragment.pp' in environment production[0m
+[0;36mDebug: Automatically imported concat::fragment from concat/fragment into production[0m
+[0;36mDebug: Scope(Class[Haproxy::Config]): Retrieving template haproxy/haproxy-base.cfg.erb[0m
+[0;36mDebug: template[/etc/puppetlabs/code/environments/production/modules/haproxy/templates/haproxy-base.cfg.erb]: Bound template variables for /etc/puppetlabs/code/environments/production/modules/haproxy/templates/haproxy-base.cfg.erb in 0.00 seconds[0m
+[0;36mDebug: template[/etc/puppetlabs/code/environments/production/modules/haproxy/templates/haproxy-base.cfg.erb]: Interpolated template /etc/puppetlabs/code/environments/production/modules/haproxy/templates/haproxy-base.cfg.erb in 0.00 seconds[0m
+[0;36mDebug: importing '/etc/puppetlabs/code/environments/production/modules/haproxy/manifests/service.pp' in environment production[0m
+[0;36mDebug: Automatically imported haproxy::service from haproxy/service into production[0m
+[0;36mDebug: Evicting cache entry for environment 'production'[0m
+[0;36mDebug: Caching environment 'production' (ttl = 0 sec)[0m
+[0;36mDebug: Evicting cache entry for environment 'production'[0m
+[0;36mDebug: Caching environment 'production' (ttl = 0 sec)[0m
+[0;36mDebug: Evicting cache entry for environment 'production'[0m
+[0;36mDebug: Caching environment 'production' (ttl = 0 sec)[0m
+[0;36mDebug: Evicting cache entry for environment 'production'[0m
+[0;36mDebug: Caching environment 'production' (ttl = 0 sec)[0m
+[0;36mDebug: Evicting cache entry for environment 'production'[0m
+[0;36mDebug: Caching environment 'production' (ttl = 0 sec)[0m
+[0;36mDebug: importing '/etc/puppetlabs/code/environments/production/modules/haproxy/manifests/frontend.pp' in environment production[0m
+[0;36mDebug: Automatically imported haproxy::frontend from haproxy/frontend into production[0m
+[0;36mDebug: importing '/etc/puppetlabs/code/environments/production/modules/haproxy/manifests/backend.pp' in environment production[0m
+[0;36mDebug: Automatically imported haproxy::backend from haproxy/backend into production[0m
+[0;36mDebug: importing '/etc/puppetlabs/code/environments/production/modules/haproxy/manifests/listen.pp' in environment production[0m
+[0;36mDebug: Automatically imported haproxy::listen from haproxy/listen into production[0m
+[0;36mDebug: importing '/etc/puppetlabs/code/environments/production/modules/keepalived/manifests/init.pp' in environment production[0m
+[0;36mDebug: Automatically imported keepalived from keepalived into production[0m
+[0;36mDebug: importing '/etc/puppetlabs/code/environments/production/modules/keepalived/manifests/params.pp' in environment production[0m
+[0;36mDebug: Automatically imported keepalived::params from keepalived/params into production[0m
+[0;36mDebug: Evicting cache entry for environment 'production'[0m
+[0;36mDebug: Caching environment 'production' (ttl = 0 sec)[0m
+[0;36mDebug: hiera(): Looking up keepalived::config_dir in YAML backend[0m
+[0;36mDebug: hiera(): Looking for data source nodes/haproxy1.home[0m
+[0;36mDebug: hiera(): Cannot find datafile /etc/puppetlabs/code/environments/production/hieradata/nodes/haproxy1.home.yaml, skipping[0m
+[0;36mDebug: hiera(): Looking for data source common[0m
+[0;36mDebug: hiera(): Cannot find datafile /etc/puppetlabs/code/environments/production/hieradata/common.yaml, skipping[0m
+[0;36mDebug: Evicting cache entry for environment 'production'[0m
+[0;36mDebug: Caching environment 'production' (ttl = 0 sec)[0m
+[0;36mDebug: hiera(): Looking up keepalived::config_dir_mode in YAML backend[0m
+[0;36mDebug: hiera(): Looking for data source nodes/haproxy1.home[0m
+[0;36mDebug: hiera(): Cannot find datafile /etc/puppetlabs/code/environments/production/hieradata/nodes/haproxy1.home.yaml, skipping[0m
+[0;36mDebug: hiera(): Looking for data source common[0m
+[0;36mDebug: hiera(): Cannot find datafile /etc/puppetlabs/code/environments/production/hieradata/common.yaml, skipping[0m
+[0;36mDebug: Evicting cache entry for environment 'production'[0m
+[0;36mDebug: Caching environment 'production' (ttl = 0 sec)[0m
+[0;36mDebug: hiera(): Looking up keepalived::config_file_mode in YAML backend[0m
+[0;36mDebug: hiera(): Looking for data source nodes/haproxy1.home[0m
+[0;36mDebug: hiera(): Cannot find datafile /etc/puppetlabs/code/environments/production/hieradata/nodes/haproxy1.home.yaml, skipping[0m
+[0;36mDebug: hiera(): Looking for data source common[0m
+[0;36mDebug: hiera(): Cannot find datafile /etc/puppetlabs/code/environments/production/hieradata/common.yaml, skipping[0m
+[0;36mDebug: Evicting cache entry for environment 'production'[0m
+[0;36mDebug: Caching environment 'production' (ttl = 0 sec)[0m
+[0;36mDebug: hiera(): Looking up keepalived::config_group in YAML backend[0m
+[0;36mDebug: hiera(): Looking for data source nodes/haproxy1.home[0m
+[0;36mDebug: hiera(): Cannot find datafile /etc/puppetlabs/code/environments/production/hieradata/nodes/haproxy1.home.yaml, skipping[0m
+[0;36mDebug: hiera(): Looking for data source common[0m
+[0;36mDebug: hiera(): Cannot find datafile /etc/puppetlabs/code/environments/production/hieradata/common.yaml, skipping[0m
+[0;36mDebug: Evicting cache entry for environment 'production'[0m
+[0;36mDebug: Caching environment 'production' (ttl = 0 sec)[0m
+[0;36mDebug: hiera(): Looking up keepalived::config_owner in YAML backend[0m
+[0;36mDebug: hiera(): Looking for data source nodes/haproxy1.home[0m
+[0;36mDebug: hiera(): Cannot find datafile /etc/puppetlabs/code/environments/production/hieradata/nodes/haproxy1.home.yaml, skipping[0m
+[0;36mDebug: hiera(): Looking for data source common[0m
+[0;36mDebug: hiera(): Cannot find datafile /etc/puppetlabs/code/environments/production/hieradata/common.yaml, skipping[0m
+[0;36mDebug: Evicting cache entry for environment 'production'[0m
+[0;36mDebug: Caching environment 'production' (ttl = 0 sec)[0m
+[0;36mDebug: hiera(): Looking up keepalived::daemon_group in YAML backend[0m
+[0;36mDebug: hiera(): Looking for data source nodes/haproxy1.home[0m
+[0;36mDebug: hiera(): Cannot find datafile /etc/puppetlabs/code/environments/production/hieradata/nodes/haproxy1.home.yaml, skipping[0m
+[0;36mDebug: hiera(): Looking for data source common[0m
+[0;36mDebug: hiera(): Cannot find datafile /etc/puppetlabs/code/environments/production/hieradata/common.yaml, skipping[0m
+[0;36mDebug: Evicting cache entry for environment 'production'[0m
+[0;36mDebug: Caching environment 'production' (ttl = 0 sec)[0m
+[0;36mDebug: hiera(): Looking up keepalived::daemon_user in YAML backend[0m
+[0;36mDebug: hiera(): Looking for data source nodes/haproxy1.home[0m
+[0;36mDebug: hiera(): Cannot find datafile /etc/puppetlabs/code/environments/production/hieradata/nodes/haproxy1.home.yaml, skipping[0m
+[0;36mDebug: hiera(): Looking for data source common[0m
+[0;36mDebug: hiera(): Cannot find datafile /etc/puppetlabs/code/environments/production/hieradata/common.yaml, skipping[0m
+[0;36mDebug: Evicting cache entry for environment 'production'[0m
+[0;36mDebug: Caching environment 'production' (ttl = 0 sec)[0m
+[0;36mDebug: hiera(): Looking up keepalived::pkg_ensure in YAML backend[0m
+[0;36mDebug: hiera(): Looking for data source nodes/haproxy1.home[0m
+[0;36mDebug: hiera(): Cannot find datafile /etc/puppetlabs/code/environments/production/hieradata/nodes/haproxy1.home.yaml, skipping[0m
+[0;36mDebug: hiera(): Looking for data source common[0m
+[0;36mDebug: hiera(): Cannot find datafile /etc/puppetlabs/code/environments/production/hieradata/common.yaml, skipping[0m
+[0;36mDebug: Evicting cache entry for environment 'production'[0m
+[0;36mDebug: Caching environment 'production' (ttl = 0 sec)[0m
+[0;36mDebug: hiera(): Looking up keepalived::pkg_list in YAML backend[0m
+[0;36mDebug: hiera(): Looking for data source nodes/haproxy1.home[0m
+[0;36mDebug: hiera(): Cannot find datafile /etc/puppetlabs/code/environments/production/hieradata/nodes/haproxy1.home.yaml, skipping[0m
+[0;36mDebug: hiera(): Looking for data source common[0m
+[0;36mDebug: hiera(): Cannot find datafile /etc/puppetlabs/code/environments/production/hieradata/common.yaml, skipping[0m
+[0;36mDebug: Evicting cache entry for environment 'production'[0m
+[0;36mDebug: Caching environment 'production' (ttl = 0 sec)[0m
+[0;36mDebug: hiera(): Looking up keepalived::service_enable in YAML backend[0m
+[0;36mDebug: hiera(): Looking for data source nodes/haproxy1.home[0m
+[0;36mDebug: hiera(): Cannot find datafile /etc/puppetlabs/code/environments/production/hieradata/nodes/haproxy1.home.yaml, skipping[0m
+[0;36mDebug: hiera(): Looking for data source common[0m
+[0;36mDebug: hiera(): Cannot find datafile /etc/puppetlabs/code/environments/production/hieradata/common.yaml, skipping[0m
+[0;36mDebug: Evicting cache entry for environment 'production'[0m
+[0;36mDebug: Caching environment 'production' (ttl = 0 sec)[0m
+[0;36mDebug: hiera(): Looking up keepalived::service_ensure in YAML backend[0m
+[0;36mDebug: hiera(): Looking for data source nodes/haproxy1.home[0m
+[0;36mDebug: hiera(): Cannot find datafile /etc/puppetlabs/code/environments/production/hieradata/nodes/haproxy1.home.yaml, skipping[0m
+[0;36mDebug: hiera(): Looking for data source common[0m
+[0;36mDebug: hiera(): Cannot find datafile /etc/puppetlabs/code/environments/production/hieradata/common.yaml, skipping[0m
+[0;36mDebug: Evicting cache entry for environment 'production'[0m
+[0;36mDebug: Caching environment 'production' (ttl = 0 sec)[0m
+[0;36mDebug: hiera(): Looking up keepalived::service_hasrestart in YAML backend[0m
+[0;36mDebug: hiera(): Looking for data source nodes/haproxy1.home[0m
+[0;36mDebug: hiera(): Cannot find datafile /etc/puppetlabs/code/environments/production/hieradata/nodes/haproxy1.home.yaml, skipping[0m
+[0;36mDebug: hiera(): Looking for data source common[0m
+[0;36mDebug: hiera(): Cannot find datafile /etc/puppetlabs/code/environments/production/hieradata/common.yaml, skipping[0m
+[0;36mDebug: Evicting cache entry for environment 'production'[0m
+[0;36mDebug: Caching environment 'production' (ttl = 0 sec)[0m
+[0;36mDebug: hiera(): Looking up keepalived::service_hasstatus in YAML backend[0m
+[0;36mDebug: hiera(): Looking for data source nodes/haproxy1.home[0m
+[0;36mDebug: hiera(): Cannot find datafile /etc/puppetlabs/code/environments/production/hieradata/nodes/haproxy1.home.yaml, skipping[0m
+[0;36mDebug: hiera(): Looking for data source common[0m
+[0;36mDebug: hiera(): Cannot find datafile /etc/puppetlabs/code/environments/production/hieradata/common.yaml, skipping[0m
+[0;36mDebug: Evicting cache entry for environment 'production'[0m
+[0;36mDebug: Caching environment 'production' (ttl = 0 sec)[0m
+[0;36mDebug: hiera(): Looking up keepalived::service_manage in YAML backend[0m
+[0;36mDebug: hiera(): Looking for data source nodes/haproxy1.home[0m
+[0;36mDebug: hiera(): Cannot find datafile /etc/puppetlabs/code/environments/production/hieradata/nodes/haproxy1.home.yaml, skipping[0m
+[0;36mDebug: hiera(): Looking for data source common[0m
+[0;36mDebug: hiera(): Cannot find datafile /etc/puppetlabs/code/environments/production/hieradata/common.yaml, skipping[0m
+[0;36mDebug: Evicting cache entry for environment 'production'[0m
+[0;36mDebug: Caching environment 'production' (ttl = 0 sec)[0m
+[0;36mDebug: hiera(): Looking up keepalived::service_name in YAML backend[0m
+[0;36mDebug: hiera(): Looking for data source nodes/haproxy1.home[0m
+[0;36mDebug: hiera(): Cannot find datafile /etc/puppetlabs/code/environments/production/hieradata/nodes/haproxy1.home.yaml, skipping[0m
+[0;36mDebug: hiera(): Looking for data source common[0m
+[0;36mDebug: hiera(): Cannot find datafile /etc/puppetlabs/code/environments/production/hieradata/common.yaml, skipping[0m
+[0;36mDebug: Evicting cache entry for environment 'production'[0m
+[0;36mDebug: Caching environment 'production' (ttl = 0 sec)[0m
+[0;36mDebug: hiera(): Looking up keepalived::service_restart in YAML backend[0m
+[0;36mDebug: hiera(): Looking for data source nodes/haproxy1.home[0m
+[0;36mDebug: hiera(): Cannot find datafile /etc/puppetlabs/code/environments/production/hieradata/nodes/haproxy1.home.yaml, skipping[0m
+[0;36mDebug: hiera(): Looking for data source common[0m
+[0;36mDebug: hiera(): Cannot find datafile /etc/puppetlabs/code/environments/production/hieradata/common.yaml, skipping[0m
+[0;36mDebug: importing '/etc/puppetlabs/code/environments/production/modules/keepalived/manifests/install.pp' in environment production[0m
+[0;36mDebug: Automatically imported keepalived::install from keepalived/install into production[0m
+[0;36mDebug: importing '/etc/puppetlabs/code/environments/production/modules/keepalived/manifests/config.pp' in environment production[0m
+[0;36mDebug: Automatically imported keepalived::config from keepalived/config into production[0m
+[0;36mDebug: importing '/etc/puppetlabs/code/environments/production/modules/keepalived/manifests/service.pp' in environment production[0m
+[0;36mDebug: Automatically imported keepalived::service from keepalived/service into production[0m
+[0;36mDebug: importing '/etc/puppetlabs/code/environments/production/modules/keepalived/manifests/vrrp/instance.pp' in environment production[0m
+[0;36mDebug: Automatically imported keepalived::vrrp::instance from keepalived/vrrp/instance into production[0m
+[0;36mDebug: importing '/etc/puppetlabs/code/environments/production/modules/concat/manifests/setup.pp' in environment production[0m
+[0;36mDebug: Automatically imported concat::setup from concat/setup into production[0m
+[0;36mDebug: Evicting cache entry for environment 'production'[0m
+[0;36mDebug: Caching environment 'production' (ttl = 0 sec)[0m
+[1;33mWarning: Scope(Haproxy::Frontend[http-in]): The $bind_options parameter is deprecated; please use $bind instead[0m
+[0;36mDebug: Scope(Haproxy::Frontend[http-in]): Retrieving template haproxy/haproxy_frontend_block.erb[0m
+[0;36mDebug: template[/etc/puppetlabs/code/environments/production/modules/haproxy/templates/haproxy_frontend_block.erb]: Bound template variables for /etc/puppetlabs/code/environments/production/modules/haproxy/templates/haproxy_frontend_block.erb in 0.00 seconds[0m
+[0;36mDebug: Scope(Haproxy::Frontend[http-in]): Retrieving template haproxy/fragments/_bind.erb[0m
+[0;36mDebug: template[/etc/puppetlabs/code/environments/production/modules/haproxy/templates/fragments/_bind.erb]: Bound template variables for /etc/puppetlabs/code/environments/production/modules/haproxy/templates/fragments/_bind.erb in 0.00 seconds[0m
+[0;36mDebug: template[/etc/puppetlabs/code/environments/production/modules/haproxy/templates/fragments/_bind.erb]: Interpolated template /etc/puppetlabs/code/environments/production/modules/haproxy/templates/fragments/_bind.erb in 0.01 seconds[0m
+[0;36mDebug: Scope(Haproxy::Frontend[http-in]): Retrieving template haproxy/fragments/_mode.erb[0m
+[0;36mDebug: template[/etc/puppetlabs/code/environments/production/modules/haproxy/templates/fragments/_mode.erb]: Bound template variables for /etc/puppetlabs/code/environments/production/modules/haproxy/templates/fragments/_mode.erb in 0.00 seconds[0m
+[0;36mDebug: template[/etc/puppetlabs/code/environments/production/modules/haproxy/templates/fragments/_mode.erb]: Interpolated template /etc/puppetlabs/code/environments/production/modules/haproxy/templates/fragments/_mode.erb in 0.00 seconds[0m
+[0;36mDebug: Scope(Haproxy::Frontend[http-in]): Retrieving template haproxy/fragments/_options.erb[0m
+[0;36mDebug: template[/etc/puppetlabs/code/environments/production/modules/haproxy/templates/fragments/_options.erb]: Bound template variables for /etc/puppetlabs/code/environments/production/modules/haproxy/templates/fragments/_options.erb in 0.00 seconds[0m
+[0;36mDebug: template[/etc/puppetlabs/code/environments/production/modules/haproxy/templates/fragments/_options.erb]: Interpolated template /etc/puppetlabs/code/environments/production/modules/haproxy/templates/fragments/_options.erb in 0.00 seconds[0m
+[0;36mDebug: template[/etc/puppetlabs/code/environments/production/modules/haproxy/templates/haproxy_frontend_block.erb]: Interpolated template /etc/puppetlabs/code/environments/production/modules/haproxy/templates/haproxy_frontend_block.erb in 0.02 seconds[0m
+[0;36mDebug: Scope(Haproxy::Backend[webservers]): Retrieving template haproxy/haproxy_backend_block.erb[0m
+[0;36mDebug: template[/etc/puppetlabs/code/environments/production/modules/haproxy/templates/haproxy_backend_block.erb]: Bound template variables for /etc/puppetlabs/code/environments/production/modules/haproxy/templates/haproxy_backend_block.erb in 0.00 seconds[0m
+[0;36mDebug: Scope(Haproxy::Backend[webservers]): Retrieving template haproxy/fragments/_options.erb[0m
+[0;36mDebug: template[/etc/puppetlabs/code/environments/production/modules/haproxy/templates/fragments/_options.erb]: Bound template variables for /etc/puppetlabs/code/environments/production/modules/haproxy/templates/fragments/_options.erb in 0.00 seconds[0m
+[0;36mDebug: template[/etc/puppetlabs/code/environments/production/modules/haproxy/templates/fragments/_options.erb]: Interpolated template /etc/puppetlabs/code/environments/production/modules/haproxy/templates/fragments/_options.erb in 0.00 seconds[0m
+[0;36mDebug: template[/etc/puppetlabs/code/environments/production/modules/haproxy/templates/haproxy_backend_block.erb]: Interpolated template /etc/puppetlabs/code/environments/production/modules/haproxy/templates/haproxy_backend_block.erb in 0.00 seconds[0m
+[0;36mDebug: importing '/etc/puppetlabs/code/environments/production/modules/haproxy/manifests/balancermember/collect_exported.pp' in environment production[0m
+[1;33mWarning: You cannot collect exported resources without storeconfigs being set; the collection will be ignored at /etc/puppetlabs/code/environments/production/modules/haproxy/manifests/balancermember/collect_exported.pp:7:3[0m
+[0;36mDebug: Automatically imported haproxy::balancermember::collect_exported from haproxy/balancermember/collect_exported into production[0m
+[0;36mDebug: Scope(Haproxy::Listen[admin]): Retrieving template haproxy/haproxy_listen_block.erb[0m
+[0;36mDebug: template[/etc/puppetlabs/code/environments/production/modules/haproxy/templates/haproxy_listen_block.erb]: Bound template variables for /etc/puppetlabs/code/environments/production/modules/haproxy/templates/haproxy_listen_block.erb in 0.00 seconds[0m
+[0;36mDebug: Scope(Haproxy::Listen[admin]): Retrieving template haproxy/fragments/_bind.erb[0m
+[0;36mDebug: template[/etc/puppetlabs/code/environments/production/modules/haproxy/templates/fragments/_bind.erb]: Bound template variables for /etc/puppetlabs/code/environments/production/modules/haproxy/templates/fragments/_bind.erb in 0.00 seconds[0m
+[0;36mDebug: template[/etc/puppetlabs/code/environments/production/modules/haproxy/templates/fragments/_bind.erb]: Interpolated template /etc/puppetlabs/code/environments/production/modules/haproxy/templates/fragments/_bind.erb in 0.00 seconds[0m
+[0;36mDebug: Scope(Haproxy::Listen[admin]): Retrieving template haproxy/fragments/_mode.erb[0m
+[0;36mDebug: template[/etc/puppetlabs/code/environments/production/modules/haproxy/templates/fragments/_mode.erb]: Bound template variables for /etc/puppetlabs/code/environments/production/modules/haproxy/templates/fragments/_mode.erb in 0.00 seconds[0m
+[0;36mDebug: template[/etc/puppetlabs/code/environments/production/modules/haproxy/templates/fragments/_mode.erb]: Interpolated template /etc/puppetlabs/code/environments/production/modules/haproxy/templates/fragments/_mode.erb in 0.00 seconds[0m
+[0;36mDebug: Scope(Haproxy::Listen[admin]): Retrieving template haproxy/fragments/_options.erb[0m
+[0;36mDebug: template[/etc/puppetlabs/code/environments/production/modules/haproxy/templates/fragments/_options.erb]: Bound template variables for /etc/puppetlabs/code/environments/production/modules/haproxy/templates/fragments/_options.erb in 0.00 seconds[0m
+[0;36mDebug: template[/etc/puppetlabs/code/environments/production/modules/haproxy/templates/fragments/_options.erb]: Interpolated template /etc/puppetlabs/code/environments/production/modules/haproxy/templates/fragments/_options.erb in 0.00 seconds[0m
+[0;36mDebug: template[/etc/puppetlabs/code/environments/production/modules/haproxy/templates/haproxy_listen_block.erb]: Interpolated template /etc/puppetlabs/code/environments/production/modules/haproxy/templates/haproxy_listen_block.erb in 0.01 seconds[0m
+[1;31mError: Evaluation Error: Comparison of: String < Integer, is not possible. Caused by 'A String is not comparable to a non String'. at /etc/puppetlabs/code/environments/production/modules/keepalived/manifests/vrrp/instance.pp:169:43 on node haproxy1.home
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/pops/evaluator/compare_operator.rb:49:in `cmp_String'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/pops/visitor.rb:46:in `block in visit_this'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/pops/visitor.rb:42:in `each'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/pops/visitor.rb:42:in `visit_this'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/pops/visitor.rb:69:in `visit_this_1'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/pops/evaluator/compare_operator.rb:32:in `compare'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/pops/evaluator/evaluator_impl.rb:459:in `eval_ComparisonExpression'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/pops/visitor.rb:67:in `visit_this_1'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/pops/evaluator/evaluator_impl.rb:73:in `evaluate'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/pops/evaluator/evaluator_impl.rb:546:in `eval_OrExpression'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/pops/visitor.rb:67:in `visit_this_1'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/pops/evaluator/evaluator_impl.rb:73:in `evaluate'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/pops/evaluator/evaluator_impl.rb:546:in `eval_OrExpression'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/pops/visitor.rb:67:in `visit_this_1'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/pops/evaluator/evaluator_impl.rb:73:in `evaluate'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/pops/evaluator/evaluator_impl.rb:624:in `eval_ParenthesizedExpression'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/pops/visitor.rb:67:in `visit_this_1'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/pops/evaluator/evaluator_impl.rb:73:in `evaluate'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/pops/evaluator/evaluator_impl.rb:894:in `block in eval_IfExpression'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/pops/evaluator/evaluator_impl.rb:1128:in `with_guarded_scope'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/pops/evaluator/evaluator_impl.rb:893:in `eval_IfExpression'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/pops/visitor.rb:67:in `visit_this_1'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/pops/evaluator/evaluator_impl.rb:73:in `evaluate'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/pops/evaluator/evaluator_impl.rb:569:in `block in eval_BlockExpression'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/pops/evaluator/evaluator_impl.rb:569:in `each'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/pops/evaluator/evaluator_impl.rb:569:in `eval_BlockExpression'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/pops/visitor.rb:67:in `visit_this_1'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/pops/evaluator/evaluator_impl.rb:73:in `evaluate'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/pops/parser/evaluating_parser.rb:57:in `evaluate'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/parser/ast/pops_bridge.rb:32:in `evaluate'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/parser/ast.rb:31:in `safeevaluate'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/resource/type.rb:120:in `evaluate_code'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/parser/resource.rb:79:in `evaluate'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/parser/compiler.rb:368:in `block (4 levels) in evaluate_definitions'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/util/profiler/around_profiler.rb:58:in `profile'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/util/profiler.rb:51:in `profile'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/parser/compiler.rb:367:in `block (3 levels) in evaluate_definitions'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/parser/compiler.rb:366:in `each'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/parser/compiler.rb:366:in `block (2 levels) in evaluate_definitions'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/util/profiler/around_profiler.rb:58:in `profile'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/util/profiler.rb:51:in `profile'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/parser/compiler.rb:365:in `block in evaluate_definitions'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/util/errors.rb:64:in `exceptwrap'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/parser/compiler.rb:364:in `evaluate_definitions'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/parser/compiler.rb:387:in `block (2 levels) in evaluate_generators'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/util/profiler/around_profiler.rb:58:in `profile'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/util/profiler.rb:51:in `profile'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/parser/compiler.rb:384:in `block in evaluate_generators'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/parser/compiler.rb:381:in `loop'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/parser/compiler.rb:381:in `evaluate_generators'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/parser/compiler.rb:137:in `block (2 levels) in compile'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/util/profiler/around_profiler.rb:58:in `profile'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/util/profiler.rb:51:in `profile'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/parser/compiler.rb:137:in `block in compile'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/context.rb:64:in `override'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet.rb:223:in `override'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/parser/compiler.rb:121:in `compile'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/parser/compiler.rb:34:in `compile'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/indirector/catalog/compiler.rb:93:in `block (2 levels) in compile'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/util/profiler/around_profiler.rb:58:in `profile'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/util/profiler.rb:51:in `profile'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/indirector/catalog/compiler.rb:91:in `block in compile'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/util.rb:129:in `block in benchmark'
+/opt/puppetlabs/puppet/lib/ruby/2.1.0/benchmark.rb:294:in `realtime'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/util.rb:128:in `benchmark'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/indirector/catalog/compiler.rb:90:in `compile'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/indirector/catalog/compiler.rb:50:in `find'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/indirector/indirection.rb:194:in `find'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/application/apply.rb:256:in `block in main'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/context.rb:64:in `override'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet.rb:223:in `override'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/application/apply.rb:225:in `main'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/application/apply.rb:170:in `run_command'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/application.rb:344:in `block in run'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/util.rb:446:in `exit_on_fail'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/application.rb:344:in `run'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/util/command_line.rb:128:in `run'
+/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/util/command_line.rb:72:in `execute'
+/opt/puppetlabs/bin/puppet:5:in `<main>'[0m
