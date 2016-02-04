@@ -4,6 +4,10 @@
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  config.hostmanager.enabled = true
+  config.hostmanager.manage_host = true
+  config.hostmanager.ignore_private_ip = false
+  config.hostmanager.include_offline = true
   config.vm.box = "puppetlabs/centos-6.6-64-nocm"
   config.vm.provider "virtualbox" do |v|
     v.customize ["modifyvm", :id, "--memory", 256]

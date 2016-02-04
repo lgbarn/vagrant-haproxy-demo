@@ -6,6 +6,7 @@ if [ ! -f /etc/haproxy/haproxy.cfg ]; then
   yum -y install haproxy
   yum -y install keepalived
   yum -y install nc
+  yum -y install openssl
   rpm -e irqbalance
   rpm -ivh http://pkgs.repoforge.org/socat/socat-1.7.2.4-1.el6.rf.x86_64.rpm
   chkconfig haproxy on
@@ -13,6 +14,8 @@ if [ ! -f /etc/haproxy/haproxy.cfg ]; then
   service iptables save
   service iptables stop
   chkconfig iptables off
+  mkdir -p /etc/ssl/private/
+  cp /vagrant/cert.pem /etc/ssl/private/cert.pem
 
   # Configure haproxy
   cat > /etc/default/haproxy <<EOD
@@ -36,6 +39,7 @@ global
     daemon
     maxconn 4096
     stats socket /var/run/haproxy.sock level admin
+    tune.ssl.default-dh-param 2048
 
 defaults
     mode http
@@ -54,12 +58,18 @@ frontend http-in
     bind *:80
     default_backend webservers
 
+frontend https-in
+    bind *:443 ssl crt /etc/ssl/private/cert.pem
+    reqadd X-Forwarded-Proto:\ https
+    default_backend webservers
+
 backend webservers
     balance roundrobin
     # Poor-man's sticky
     # balance source
     # JSP SessionID Sticky
     # appsession JSESSIONID len 52 timeout 3h
+    redirect scheme https if !{ ssl_fc }
     option httpchk
     option forwardfor
     option http-server-close
