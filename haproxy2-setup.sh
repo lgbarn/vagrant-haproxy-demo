@@ -69,7 +69,7 @@ backend webservers
     # balance source
     # JSP SessionID Sticky
     # appsession JSESSIONID len 52 timeout 3h
-    redirect scheme https if !{ ssl_fc }
+#    redirect scheme https if !{ ssl_fc }
     option httpchk
     option forwardfor
     option http-server-close
