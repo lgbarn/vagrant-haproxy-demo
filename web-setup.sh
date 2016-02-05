@@ -50,6 +50,15 @@ net.ipv4.tcp_tw_reuse = 1
 net.ipv4.ip_local_port_range = 15000    61000
 net.ipv4.tcp_fin_timeout = 15
 
+# Increase the number of outstanding syn requests allowed.
+# c.f. The use of syncookies.
+net.ipv4.tcp_max_syn_backlog = 4096
+net.ipv4.tcp_syncookies = 1
+
+# The maximum number of "backlogged sockets".  Default is 128.
+net.core.somaxconn = 1024
+
+
 EOD
 
 sysctl -p

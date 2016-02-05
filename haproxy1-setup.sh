@@ -156,6 +156,8 @@ net.ipv4.tcp_tw_reuse = 1
 net.ipv4.ip_local_port_range = 15000    61000
 net.ipv4.tcp_fin_timeout = 15
 net.ipv4.tcp_max_tw_buckets = 524288
+net.core.netdev_max_backlog = 60000
+
 
 EOD
 
