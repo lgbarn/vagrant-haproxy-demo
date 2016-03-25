@@ -37,8 +37,9 @@ backend webservers
     option httpchk
     option forwardfor
     option http-server-close
-    server web1 172.28.33.13:80 maxconn 32 check
-    server web2 172.28.33.14:80 maxconn 32 check
+    server web1 10.175.32.150:80 maxconn 32 check
+    server web2 10.175.32.151:80 maxconn 32 check
+    server web3 10.175.32.152:80 maxconn 32 check
 #    server web3 172.28.33.13:80 maxconn 32 check
 #    server web4 172.28.33.14:80 maxconn 32 check
 
