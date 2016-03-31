@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ ! -f /etc/haproxy/haproxy.cfg ]; then
+if [  -f /etc/haproxy/haproxy.cfg ]; then
 
   # Install haproxy
   yum -y install haproxy
@@ -56,12 +56,16 @@ defaults
 
 frontend http-in
     bind *:80
-    default_backend webservers
+    default_backend ifactory-web
 
-frontend https-in
-    bind *:443 ssl crt /etc/ssl/private/cert.pem
-    reqadd X-Forwarded-Proto:\ https
-    default_backend webservers
+#frontend http-ssl
+#    bind *:443
+#    default_backend ifactory-ssl
+
+#frontend https-in
+#    bind *:443 ssl crt /etc/ssl/private/cert.pem
+#    reqadd X-Forwarded-Proto:\ https
+#    default_backend webservers
 
 backend webservers
     balance roundrobin
@@ -77,6 +81,30 @@ backend webservers
     server web2 172.28.33.14:80 check inter 5000
     server web3 172.28.33.15:80 check inter 5000
     server web4 172.28.33.16:80 check inter 5000
+
+backend ifactory-web
+    balance roundrobin
+    # Poor-man's sticky
+    # balance source
+    # JSP SessionID Sticky
+    # appsession JSESSIONID len 52 timeout 3h
+    option httpchk
+    option forwardfor
+    option http-server-close
+    server web1 10.2.16.54:80 maxconn 50 check
+    server web2 10.2.16.61:80 maxconn 50 check
+
+#backend ifactory-ssl
+#    balance roundrobin
+#    # Poor-man's sticky
+#    # balance source
+#    # JSP SessionID Sticky
+#    # appsession JSESSIONID len 52 timeout 3h
+#    option httpchk
+#    option forwardfor
+#    option http-server-close
+#    server web1 10.2.16.54:443 maxconn 50 check
+#    server web2 10.2.16.61:443 maxconn 50 check
 
 listen admin
     bind *:8080
@@ -101,49 +129,49 @@ global_defs {
 
 vrrp_instance VI_1 {
     state BACKUP
-    interface eth1
+    interface eth0
     virtual_router_id 51
     priority 100
     advert_int 1
     virtual_ipaddress {
-        172.28.33.10
+        10.15.30.86
     }
 }
 
-virtual_server 172.28.33.10 80 {
-    delay_loop 6
-    lb_algo rr
-    lb_kind DR
-    persistence_timeout 50
-    protocol TCP
-   # sorry_server 192.168.200.200 1358
-
-    real_server 172.28.33.11 80 {
-        weight 1
-        HTTP_GET {
-            url {
-              path /hello.php
-              digest 1490068c61809bc997ea3186b247ef93
-            }
-            connect_timeout 3
-            nb_ger_retry 3
-            delay_before_retry 2
-        }
-    }
-
-    real_server 172.28.33.12 80 {
-        weight 1
-        HTTP_GET {
-            url {
-              path /hello.php
-              digest 1490068c61809bc997ea3186b247ef93
-            }
-            connect_timeout 3
-            nb_ger_retry 3
-            delay_before_retry 2
-        }
-    }
-}
+#virtual_server 172.28.33.10 80 {
+#    delay_loop 6
+#    lb_algo rr
+#    lb_kind DR
+#    persistence_timeout 50
+#    protocol TCP
+#   # sorry_server 192.168.200.200 1358
+#
+#    real_server 172.28.33.11 80 {
+#        weight 1
+#        HTTP_GET {
+#            url {
+#              path /hello.php
+#              digest 1490068c61809bc997ea3186b247ef93
+#            }
+#            connect_timeout 3
+#            nb_ger_retry 3
+#            delay_before_retry 2
+#        }
+#    }
+#
+#    real_server 172.28.33.12 80 {
+#        weight 1
+#        HTTP_GET {
+#            url {
+#              path /hello.php
+#              digest 1490068c61809bc997ea3186b247ef93
+#            }
+#            connect_timeout 3
+#            nb_ger_retry 3
+#            delay_before_retry 2
+#        }
+#    }
+#}
 
 EOD
 
